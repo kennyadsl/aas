@@ -1,4 +1,6 @@
 Aas::Application.routes.draw do
+  resources :news
+
   get "pages/home"
 
   get "pages/about"
