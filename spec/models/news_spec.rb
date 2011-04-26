@@ -21,9 +21,10 @@ describe News do
     http_link_news.should be_valid
   end
   
-  it "should not save link without http://" do
+  # I'm adding http:// before validate!
+  it "should save link without http://" do
     no_http_link_news = News.new(@attr.merge(:link => "www.cippa.com"))
-    no_http_link_news.should_not be_valid
+    no_http_link_news.should be_valid
   end
   
   it "should not save link with only http://" do

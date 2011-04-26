@@ -4,6 +4,15 @@ class News < ActiveRecord::Base
   link_regex = /\A(^\z|http:\/\/+.+)\z/i #empty or valid link
   
   validates :body, :presence => true
+  validates :link, :format => { :with => link_regex }
   
-  validates :link, :format => {:with => link_regex}
+  before_validation :add_http
+  
+  private
+  def add_http
+    if !self.link.blank? & !self.link.match(/^http:\/\//)
+      self.link = "http://"+self.link
+    end
+  end
+  
 end
