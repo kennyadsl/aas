@@ -42,6 +42,7 @@ Resources structure:
 	player
 		- full name 
 		- occupation
+    - role
 		- city
 		- bio
 		
