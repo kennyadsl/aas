@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110426132648) do
+ActiveRecord::Schema.define(:version => 20110426144404) do
+
+  create_table "events", :force => true do |t|
+    t.text     "body"
+    t.datetime "date"
+    t.string   "location"
+    t.string   "opponent"
+    t.boolean  "is_indoor"
+    t.integer  "result_home"
+    t.integer  "result_guest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "news", :force => true do |t|
     t.text     "body"

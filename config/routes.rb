@@ -1,4 +1,6 @@
 Aas::Application.routes.draw do
+  resources :events
+
   resources :news
 
   get "pages/home"

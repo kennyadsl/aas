@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @event.body %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @event.date %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @event.location %>
+</p>
+
+<p>
+  <b>Opponent:</b>
+  <%= @event.opponent %>
+</p>
+
+<p>
+  <b>Is indoor:</b>
+  <%= @event.is_indoor %>
+</p>
+
+<p>
+  <b>Result home:</b>
+  <%= @event.result_home %>
+</p>
+
+<p>
+  <b>Result guest:</b>
+  <%= @event.result_guest %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>
