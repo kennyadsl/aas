@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= image_tag @player.image_url(:thumb) if @player.image? %>
 <p>
   <b>Full name:</b>
   <%= @player.full_name %>
