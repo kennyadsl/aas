@@ -10,10 +10,10 @@ AAS NO PROFIT WEBSITE (test)
 
 Admin is able to CRUD: 
 	
-	news
-	events -> hasMany Photos
-	challenges
-	players -> hasOne Profie photo
+	news DONE
+	events DONE -> hasMany Photos TODO 
+	challenges TODO
+	players DONE -> hasOne Profile photo !!! Done with carrierwave (http://github.com/jnicklas/carrierwave) !!!
 	
 
 Resources structure:
@@ -42,9 +42,9 @@ Resources structure:
 	player
 		- full name 
 		- occupation
-    - role
+    	- role
 		- city
 		- bio
 		
-TODO:
-	- find best way to handle images (players hasOne photo and events hasMany photos)
+
+	
