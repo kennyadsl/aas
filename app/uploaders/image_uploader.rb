@@ -33,6 +33,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     #process :scale => [50, 50]
     process :resize_to_limit => [200, 200]
   end
+  
+  version :slide do
+    process :resize_to_limit => [400, 400]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
