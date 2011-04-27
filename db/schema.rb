@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110427092618) do
+ActiveRecord::Schema.define(:version => 20110427165130) do
+
+  create_table "challenges", :force => true do |t|
+    t.string   "opponent"
+    t.datetime "date"
+    t.string   "email"
+    t.text     "body"
+    t.string   "location"
+    t.boolean  "is_accepted"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.text     "body"

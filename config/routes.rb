@@ -1,4 +1,6 @@
 Aas::Application.routes.draw do
+  resources :challenges
+
   resources :players
 
   resources :events do
