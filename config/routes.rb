@@ -1,7 +1,9 @@
 Aas::Application.routes.draw do
   resources :players
 
-  resources :events
+  resources :events do
+    resources :pictures
+  end
 
   resources :news
 

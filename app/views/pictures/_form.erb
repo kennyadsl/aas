@@ -1,0 +1,9 @@
+<%= form_for([@event, @event.pictures.build]) do |f| %>
+  <div class="field">
+    <%= f.label :image %><br />
+    <%= f.text_field :image %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -35,6 +35,13 @@
   <%= @event.result_guest %>
 </p>
 
+<h2>Pictures</h2>
+<%= render :partial => "pictures/picture", :collection => @event.pictures %>
+
+<h2>Add a picture</h2>
+<%= render "pictures/form" %>
+
+<br>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
