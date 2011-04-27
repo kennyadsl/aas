@@ -1,6 +1,6 @@
 <p>
 	<b>Image</b>
-	<%= picture.image %>
+	<%= image_tag picture.image_url(:thumb) if picture.image? %>
 </p>
 <p>
   <%= link_to 'Destroy Image', [picture.event, picture],

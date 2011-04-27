@@ -1,7 +1,7 @@
-<%= form_for([@event, @event.pictures.build]) do |f| %>
+<%= form_for([@event, @event.pictures.build], :html => {:multipart => true}) do |f| %>
   <div class="field">
     <%= f.label :image %><br />
-    <%= f.text_field :image %>
+    <%= f.file_field :image %>
   </div>
   <div class="actions">
     <%= f.submit %>
