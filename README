@@ -11,9 +11,9 @@ AAS NO PROFIT WEBSITE (test)
 Admin is able to CRUD: 
 	
 	news DONE
-	events DONE -> hasMany Photos TODO 
+	events DONE -> hasMany Photos DONE
 	challenges TODO
-	players DONE -> hasOne Profile photo !!! Done with carrierwave (http://github.com/jnicklas/carrierwave) !!!
+	players DONE -> hasOne Profile photo DONE
 	
 
 Resources structure:
