@@ -1,0 +1,39 @@
+it:
+  errors:
+    messages:
+      not_found: "non trovato"
+      already_confirmed: "non ancora confermato"
+      not_locked: "non è stato bloccato"
+
+  devise:
+    failure:
+      unauthenticated: 'Devi effettuare il login o registrarti per continuare.'
+      unconfirmed: 'Devi confirmare il tuo account per continuare.'
+      locked: 'Il tuo account è bloccato.'
+      invalid: 'Email o password non valide.'
+      invalid_token: 'Token di autenticazione non valido.'
+      timeout: 'La sessione è scaduta. Effettua il login.'
+      inactive: 'Il tuo account non è ancora stato attivato.'
+    sessions:
+      signed_in: 'Sei entrato nel sistema con successo.'
+      signed_out: 'Sei uscito dal sistema con successo.'
+    passwords:
+      send_instructions: 'Riceverai un email contenente le istruzioni per ripristinare la tua password entro pochi minuti.'
+      updated: 'La tua password è stata cambiata correttamente. Ora sei entrato nel sistema.'
+    confirmations:
+      send_instructions: 'Riceverai un email contenente le istruzioni per confermare il tuo account entro pochi minuti.'
+      confirmed: 'Il tuo account è stato creato correttamente. Ora sei entrato nel sistema.'
+    registrations:
+      signed_up: 'Ti sei registrato con successo. Se abilitata ti verrà inviata un email di conferma.'
+      updated: 'Il tuo account è stato aggiornato con successo.'
+      destroyed: 'Arriverci! Il tuo account è stato cancellato con successo. Speriamo di vederti presto.'
+    unlocks:
+      send_instructions: 'Riceverai un email contenente le istruzioni per sbloccare il tuo account entro pochi minuti.'
+      unlocked: 'Il tuo account è stato sbloccato correttamente. Ora sei entrato nel sistema.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Istruzioni di conferma'
+      reset_password_instructions:
+        subject: 'Istruzioni di ripristino password'
+      unlock_instructions:
+        subject: 'Istruzioni di sblocco acccount'

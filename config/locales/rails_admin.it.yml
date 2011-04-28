@@ -1,0 +1,60 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+it:
+  home:
+    name: "home"
+  admin:
+    dashboard:
+      pagename: "Amministrazione"
+      name: "Dashboard"
+      model_name: "Nome Modello"
+      last_used: "Ultimo utilizzo"
+      records: "Record"
+      modify: "Modifica"
+      add_new: "Aggiungi"
+      show: "Mostra"
+      ago: "fa"
+    history:
+      name: "Storia"
+      page_name: "Storia per %{name}"
+      no_activity: "Nessuna attività"
+    credentials:
+      log_out: "Logout"
+    list:
+      edit_action: "Modifica"
+      delete_action: "Elimina"
+      select_action: "Seleziona"
+      delete_selected: "Elimina selezionati"
+      add_new: "Aggiungi nuovo"
+      search: "Cerca"
+      select: "Seleziona %{name} da modificare"
+      show_all: "Mostra tutti"
+    new:
+      basic_info: "Informazioni di base"
+      required: "Obbligatorio"
+      optional: "Opzionale"
+      one_char: "carattere."
+      many_chars: "o più caratteri."
+      chosen: "Scelto %{name}"
+      select_choice: "Seleziona e clicca"
+      chose_all: "Scegli tutti"
+      clear_all: "Svuota tutto"
+      save: "Salva"
+      save_and_add_another: "Salva e aggiungi ancora"
+      save_and_edit: "Salva e modifica"
+      cancel: "Annulla"
+    delete:
+      flash_confirmation: "%{name} è stato eliminato correttamente"
+      confirmation: "Si, sono sicuro"
+    flash:
+      successful: "%{name} è stato %{action} correttamente"
+      error: "%{name} non è stato %{action}"
+      noaction: "Non è stato fatto niente"
+    actions:
+      create: "crea"
+      created: "creato"
+      update: "aggiorna"
+      updated: "aggirnato"
+      delete: "elimina"
+      deleted: "eliminato"
