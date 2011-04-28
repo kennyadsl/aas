@@ -1,0 +1,70 @@
+it:
+    activerecord:
+        models:
+            event: 
+                one: "Evento"
+                other: "Eventi"
+            challenge: 
+                one: "Sfida"
+                other: "Sfide"
+            player: 
+                one: "Giocatore"
+                other: "Giocatori"
+            user:
+                one: "Utente"
+                other: "Utenti"
+            picture:
+                one: "Immagine"
+                other: "Immagini"
+            news:
+                one: "Notizia"
+                other: "Notizie"
+        attributes:
+            event:
+                body: "Testo"
+                date: "Data"
+                location: "Luogo"
+                opponent: "Sfidante"
+                is_indoor: "In casa"
+                result_home: "Risultato (Squadra in casa)"
+                result_guest: "Risultato (Squadra ospite)"
+                pictures: "Immagini"
+                created_at: "Creato il"
+                updated_at: "Modificato il"
+            player:
+                full_name: "Nome o Alias"
+                occupation: "Professione"
+                city: "Città"
+                role: "Ruolo"
+                bio: "Curriculum"
+                paperclip: "Immagine"
+                created_at: "Creato il"
+                updated_at: "Modificato il"
+            challenge:
+                opponent: "Sfidante"
+                date: "Data"
+                email: "Email"
+                body: "Testo"
+                created_at: "Creato il"
+                updated_at: "Modificato il"
+            news:
+                body: "Tetso"
+                link: "Link"
+                created_at: "Creato il"
+                updated_at: "Modificato il"
+            picture:
+                event: "Evento"
+                created_at: "Creato il"
+                updated_at: "Modificato il"                
+            user:
+                reset_password_sent_at: "Reset inviata a"
+                remember_created_at: "Ricorda creato"
+                sign_in_count: "Numero Login"
+                current_sign_in_at: "Attuale login il"
+                last_sign_in_at: "Ultimo login il"
+                current_sign_in_ip: "Attuale indirizzo ip"
+                last_sign_in_ip: "Ultimo indirizzo ip"
+                created_at: "Creato il"
+                updated_at: "Modificato il"
+                
+                
