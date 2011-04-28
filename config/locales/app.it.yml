@@ -21,6 +21,7 @@ it:
                 other: "Notizie"
         attributes:
             event:
+                title: "Titolo"
                 body: "Testo"
                 date: "Data"
                 location: "Luogo"
@@ -53,6 +54,7 @@ it:
                 created_at: "Creato il"
                 updated_at: "Modificato il"
             picture:
+                title: "Titolo"
                 event: "Evento"
                 created_at: "Creato il"
                 updated_at: "Modificato il"                
