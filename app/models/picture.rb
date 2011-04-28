@@ -4,6 +4,6 @@ class Picture < ActiveRecord::Base
   
   attr_accessible :event_id, :image
   
-  mount_uploader :image, ImageUploader
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
 end
