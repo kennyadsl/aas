@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110428090802) do
+ActiveRecord::Schema.define(:version => 20110428155416) do
 
   create_table "challenges", :force => true do |t|
     t.string   "opponent"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20110428090802) do
     t.integer  "result_guest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   create_table "news", :force => true do |t|
@@ -50,6 +51,7 @@ ActiveRecord::Schema.define(:version => 20110428090802) do
     t.string   "paperclip_content_type"
     t.integer  "paperclip_file_size"
     t.datetime "paperclip_updated_at"
+    t.string   "title"
   end
 
   create_table "players", :force => true do |t|

@@ -56,6 +56,7 @@ it:
             picture:
                 title: "Titolo"
                 event: "Evento"
+                event_id: "Evento"
                 created_at: "Creato il"
                 updated_at: "Modificato il"                
             user:
