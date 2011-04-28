@@ -1,4 +1,6 @@
 Aas::Application.routes.draw do
+  devise_for :users
+
   resources :challenges
 
   resources :players

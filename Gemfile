@@ -5,6 +5,9 @@ gem 'rails', '3.0.7'
 gem 'rmagick'
 gem 'carrierwave'
 
+gem 'devise' # Devise must be required before RailsAdmin
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
