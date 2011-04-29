@@ -41,3 +41,8 @@ RailsAdmin.config do |config|
     end
   end
 end
+
+RailsAdmin.authorize_with do
+  # only first registered user is admin
+  redirect_to root_path unless current_user.id == User.first.id
+end

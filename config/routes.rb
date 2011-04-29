@@ -10,7 +10,9 @@ Aas::Application.routes.draw do
   end
 
   resources :news
-
+  
+  root :to => "events#index"
+  
   get "pages/home"
 
   get "pages/about"
