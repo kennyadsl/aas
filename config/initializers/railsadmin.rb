@@ -17,9 +17,27 @@ RailsAdmin.config do |config|
   
   config.model Event do
     edit do
-      field :body do
+      field :title
+      field :body, :text do
         ckeditor true
       end
+      field :opponent
+      field :date
+      field :location
+      field :is_indoor
+      field :result_home
+      field :result_guest
+    end
+    list do
+      field :title
+      field :opponent
+      field :location
+    end
+  end
+
+  config.model Picture do
+    list do
+      field :title
     end
   end
 end
