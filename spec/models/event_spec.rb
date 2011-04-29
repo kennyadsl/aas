@@ -18,4 +18,11 @@ describe Event do
     all_data_event = Event.new(@attr)
     all_data_event.should be_valid
   end
+
+  it "should return last inserted events first" do
+    old_event = Event.create(@attr)
+    recent_event= Event.create(@attr)
+    Event.find(:all, :limit => 5).first.id.should == recent_event.id
+  end
+
 end
