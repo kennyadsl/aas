@@ -4,6 +4,7 @@ log/*.log
 *.log
 /tmp/
 doc/
+.idea/
 *.swp
 *~
 .project
