@@ -3,6 +3,7 @@ require 'spec_helper'
 describe Event do
   before(:each) do
     @attr = {
+        :title => "Titolone evento",
         :body => "Quisque eget odio ac lectus vestibulum faucibus eget in metus.",
         :location => "Los Angeles",
         :opponent => "Lakers",
