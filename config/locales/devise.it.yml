@@ -37,3 +37,4 @@ it:
         subject: 'Istruzioni di ripristino password'
       unlock_instructions:
         subject: 'Istruzioni di sblocco acccount'
+  signin: "Effettua il login"

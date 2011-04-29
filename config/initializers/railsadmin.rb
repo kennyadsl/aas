@@ -4,17 +4,17 @@ RailsAdmin.config do |config|
       "#{bindings[:object].full_name}"
     end
   end
-  
+
   config.model Challenge do
     object_label do
       "#{bindings[:object].opponent}"
     end
   end
-  
+
   config.model User do
     visible false
   end
-  
+
   config.model Event do
     edit do
       field :title
@@ -42,7 +42,3 @@ RailsAdmin.config do |config|
   end
 end
 
-RailsAdmin.authorize_with do
-  # only first registered user is admin
-  redirect_to root_path unless current_user.id == User.first.id
-end
