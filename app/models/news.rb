@@ -7,10 +7,12 @@ class News < ActiveRecord::Base
   validates :link, :format => { :with => link_regex }
   
   before_validation :add_http
+
+  default_scope :order => 'created_at DESC'
   
   private
   def add_http
-    if !self.link.blank? & !self.link.match(/^http:\/\//)
+    if self.link && !self.link.blank? & !self.link.match(/^http:\/\//)
       self.link = "http://"+self.link
     end
   end

@@ -12,7 +12,7 @@ describe News do
   end
   
   it "should not require a link" do
-    no_link_news = News.new(@attr.merge(:link => ""))
+    no_link_news = News.new(@attr.merge(:link => nil))
     no_link_news.should be_valid
   end
   
@@ -30,6 +30,12 @@ describe News do
   it "should not save link with only http://" do
     only_http_link_news = News.new(@attr.merge(:link => "http://"))
     only_http_link_news.should_not be_valid
+  end
+
+  it "should return news last inserted news first" do
+    old_news = News.create(@attr)
+    recent_news = News.create(@attr)
+    News.find(:all, :limit => 5).first.id.should == recent_news.id
   end
   
 end
