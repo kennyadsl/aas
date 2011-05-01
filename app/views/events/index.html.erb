@@ -1,35 +1,16 @@
-<h1>Listing events</h1>
+<h1>Ultimi eventi </h1>
 
-<table>
-  <tr>
-    <th>Body</th>
-    <th>Date</th>
-    <th>Location</th>
-    <th>Opponent</th>
-    <th>Is indoor</th>
-    <th>Result home</th>
-    <th>Result guest</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @events.each do |event| %>
-  <tr>
-    <td><%= event.body %></td>
-    <td><%= event.date %></td>
-    <td><%= event.location %></td>
-    <td><%= event.opponent %></td>
-    <td><%= event.is_indoor %></td>
-    <td><%= event.result_home %></td>
-    <td><%= event.result_guest %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+    <%= link_to event.title, event, :remote => true %>
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Event', new_event_path %>
+<div id="event">
+
+</div>
+
+
+<h1>Sfida le nostre star</h1>
+<%= render :partial => "challenges/form" %>
+

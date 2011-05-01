@@ -46,6 +46,7 @@ it:
                 date: "Data"
                 email: "Email"
                 body: "Testo"
+                location: "Luogo"
                 created_at: "Creato il"
                 updated_at: "Modificato il"
             news:
