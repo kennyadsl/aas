@@ -1,0 +1,26 @@
+<p>
+  <b>Full name:</b>
+  <%= @player.full_name %>
+  <%= image_tag @player.paperclip.url(:thumb) if @player.paperclip? %>
+</p>
+
+<p>
+  <b>Occupation:</b>
+  <%= @player.occupation %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @player.city %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%= @player.role %>
+</p>
+
+<p>
+  <b>Bio:</b>
+  <%= @player.bio %>
+</p>
+

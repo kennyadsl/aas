@@ -1,31 +1,14 @@
-<h1>Listing players</h1>
+<h1>Le nostre star</h1>
 
-<table>
-  <tr>
-    <th>Full name</th>
-    <th>Occupation</th>
-    <th>City</th>
-    <th>Role</th>
-    <th>Bio</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul>
+  <% @players.each do |player| %>
+    <li>
+      <%= link_to player.full_name, player, :remote => true %>
+    </li>
+  <% end %>
+</ul>
 
-<% @players.each do |player| %>
-  <tr>
-    <td><%= player.full_name %></td>
-    <td><%= player.occupation %></td>
-    <td><%= player.city %></td>
-    <td><%= player.role %></td>
-    <td><%= player.bio %></td>
-    <td><%= link_to 'Show', player %></td>
-    <td><%= link_to 'Edit', edit_player_path(player) %></td>
-    <td><%= link_to 'Destroy', player, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+<div id="player">
 
-<%= link_to 'New Player', new_player_path %>
+</div>
