@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @player = Player.random
-    @news = News.all(:limit => 5)
+    @slider = "display"
   end
 
   def about

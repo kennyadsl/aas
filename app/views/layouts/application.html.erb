@@ -1,18 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Aas</title>
-  <%= stylesheet_link_tag :all %>
-
-  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js' %>
-  <%= javascript_include_tag 'rails' %>
-
-  <%= csrf_meta_tag %>
-
-</head>
+<!doctype html>
+<%= render :partial => "shared/header" %>
 <body>
 
-<%= yield %>
+<div id="top_bg"></div>
+<div id="header_bg"></div>
+<div id="topline_bg"></div>
+<div id="container_bg"></div>
+<% if @slider %>
+  <div id="slider_shadow"></div>
+<% end %>
+<div id="fullwrapper">
+  <div id="wrapper">
+    <div id="menu">
+      <ul>
+        <li><%= link_to "Home", :controller => "pages", :action => "home" %></li>
+        <li><%= link_to "Chi siamo", :controller => "pages", :action => "about" %></li>
+        <li><%= link_to "Le star", :controller => "players", :action => "index" %></li>
+        <li><%= link_to "Eventi", :controller => "events", :action => "index" %></li>
+      </ul>
+    </div>
+    <div id="header">
+        <div id="subheader">
+          <div id="logo-img">
+            <img src="/images/logo.png" alt="logo">
+          </div>
+          <div id="logo-text">
+            <h2 id="logo"><a href="#"><span>Nome</span></a></h2>
+            <div id="description">Descrizione</div>
+          </div>
+          <div id="social-icons">
+              <a href="http://www.twitter.com/" target="_BLANK"><img src="/images/twitter_button.png" alt="twitter button" /></a>
+              <a href="" target="_BLANK"><img src="/images/facebook_button.png" alt="facebook button" /></a>
+          </div>
+        </div>
+        <% if @slider %>
+        <div id="slider-container">
+            <div id="slider">
+                <a href="#"><img src="/colorthemes/italia.jpg" title="foto" /></a>
+            </div>
+        </div>
+        <div id="header-spacer"></div>
+        <% end %>
+    </div><!--  #header -->
+
+    <div id="container">
+      <div id="content">
+        <div class="post">
+          <%= yield %>
+        </div><!-- .post -->
+	    </div><!-- #content -->
+
+      <%= render "shared/sidebar" %>
+    </div>
+  </div>
+  <%= render "shared/footer" %>
+
+</div>
 
 </body>
 </html>

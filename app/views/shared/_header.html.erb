@@ -1,0 +1,45 @@
+<head>
+  <title>Aas</title>
+  <%= stylesheet_link_tag 'reset', 'style', '/colorthemes/italia', 'nivo-slider' %>
+
+  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js' %>
+  <%= javascript_include_tag 'rails', 'jquery.nivo.slider' %>
+
+  <%= csrf_meta_tag %>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    //slider settings
+    $('#slider').nivoSlider({
+      effect:'fade',
+      slices: 12,
+      animSpeed: 500,
+      pauseTime: 10000,
+      directionNav:true,
+      directionNavHide:true,
+      controlNav:true,
+      pauseOnHover:true,
+      manualAdvance:false,
+      beforeChange: function(){},
+      afterChange: function(){}
+    });
+    //menu hover effect
+    $('#menu .children').append('<div class="menubg"></div>');
+    $('#menu .menubg').animate({
+      opacity: 0.8
+    }, 0);
+    $('#menu li').hover(
+      function(){
+        $('.children',$(this)).show('fast');
+      },
+      function(){
+        $('.children',$(this)).hide('fast');
+      }
+    );
+    $('img').load(function() {
+      $('#wrapper').css('padding-bottom',$('#footer-container').height()+'px');
+    });
+  });
+  </script>
+
+</head>

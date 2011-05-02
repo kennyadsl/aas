@@ -1,0 +1,67 @@
+.post-title, .post-title a, .post-title a:active, .sidepanel h3, #menu ul li a:hover, #footer-links a:hover, .comment-meta, #menu ul li.current_page_item a, #menu ul li ul li.current_page_item a, #menu ul li ul li:hover a {
+
+	color: #4196f3;
+
+}
+
+.post-meta{
+
+	text-transform: uppercase;
+
+}
+
+.post-meta a, .post-meta a:active {
+
+	color: #cb3d3d;
+
+}
+
+.post-title a:hover{
+
+	color: #cb3d3d;
+
+}
+
+.post-meta a:hover {
+
+	color: #4196f3;
+
+}
+
+.more-link, .more-link:active, #sidebar #searchsubmit,#submit,  #sidebar #searchsubmit:active {
+
+	background: #4196f3;
+
+	border: #FFF 1px solid;
+
+}
+
+.more-link:hover,#submit:hover, #sidebar #searchsubmit:hover {
+
+	background: #cb3d3d;
+
+}
+
+#sidebar a:hover {
+
+	font-weight:bold;
+
+	color: #d1081d;
+
+}
+
+#searchsubmit {
+
+	background: #4196f3;
+
+	border: #FFF 1px solid;
+
+}
+
+#searchsubmit:hover{
+
+	background: #cb3d3d;
+
+	border: #FFF 1px solid;
+
+}

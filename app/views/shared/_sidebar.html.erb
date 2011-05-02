@@ -1,0 +1,31 @@
+<div id="sidebar">
+  <% if !@random_player.blank? %>
+  <div class="sidepanel">
+
+    <h3>Una star a caso</h3>
+    <p><%= @random_player.full_name %></p>
+    <%= image_tag @random_player.paperclip.url(:thumb) %>
+    <br>
+    <%= link_to "Vedi tutte le star", :controller => "players", :action => "index" %>
+  </div>
+  <% end %>
+
+  <% if !@news.blank? %>
+  <div class="sidepanel">
+    <h3>News</h3>
+    <ul>
+      <% @news.each do |new|%>
+      <li class="cat-item">
+        <p>
+          <%= truncate new.body, :length => 40%>
+          <br>
+          <%= link_to new.link, new.link if !new.link.blank?  %>
+          <br>
+          <small><%= new.created_at %> </small>
+        </p>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+</div><!-- #sidebar -->
