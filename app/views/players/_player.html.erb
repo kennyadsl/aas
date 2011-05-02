@@ -1,7 +1,10 @@
+
+<p>
+  <%= image_tag @player.paperclip.url(:medium) if @player.paperclip? %>
+</p>
 <p>
   <b>Full name:</b>
   <%= @player.full_name %>
-  <%= image_tag @player.paperclip.url(:thumb) if @player.paperclip? %>
 </p>
 
 <p>

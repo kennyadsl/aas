@@ -1,16 +1,19 @@
-<h1>Ultimi eventi </h1>
+<h1 class="post-title">Ultimi eventi </h1>
+<div class="post-content">
 
-
-<% @events.each do |event| %>
-    <%= link_to event.title, event, :remote => true %>
-<% end %>
+<ul id="events-list" >
+  <% @events.each do |event| %>
+    <li><%= link_to event.title, event, :remote => true %></li>
+  <% end %>
+</ul>
 
 
 <div id="event">
+  clicca su un evento per vedere i dettagli
+</div>
 
 </div>
 
-
-<h1>Sfida le nostre star</h1>
+<h1 class="post-title">Sfida le nostre star</h1>
 <%= render :partial => "challenges/form" %>
 

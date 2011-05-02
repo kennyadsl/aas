@@ -1,14 +1,17 @@
-<h1>Le nostre star</h1>
+<h1 class="post-title">Le nostre star</h1>
+<div class="post-content">
 
-<ul>
-  <% @players.each do |player| %>
-    <li>
-      <%= link_to player.full_name, player, :remote => true %>
-    </li>
-  <% end %>
-</ul>
+  <ul id="players-list">
+    <% @players.each do |player| %>
+      <li>
+        <%= link_to player.full_name, player, :remote => true %>
+      </li>
+    <% end %>
+  </ul>
 
 
-<div id="player">
-
+  <div id="player">
+    Clicca su un giocatore per vedere i dettagli
+  </div>
 </div>
+
