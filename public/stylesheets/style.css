@@ -9,11 +9,11 @@ AUTHOR URI: http://www.redfactory.nl
 @import "reset.css";
 @font-face {
  	font-family: 'League Gothic Regular';
- 	src: url("../font/league_gothic.eot");
+ 	src: url("font/league_gothic.eot");
 }
 @font-face {
  	font-family: 'League Gothic Regular';
- 	src: url("../font/league_gothic.ttf");
+ 	src: url("font/league_gothic.ttf");
 }
 body {
 	background: #fff;
