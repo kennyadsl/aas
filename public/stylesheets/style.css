@@ -343,6 +343,8 @@ filter: dropshadow(color=#000000, offx=2, offy=1);
 }
 .post-content {
 	margin: 15px 0 15px 0;
+  font-size: 120%;
+;
 }
 .post-content h1 {
 	font-size: 180%;

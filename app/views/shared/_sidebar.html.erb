@@ -5,9 +5,7 @@
     <h3>Una star a caso</h3>
     <br>
     <%= image_tag @random_player.paperclip.url(:medium) %>
-    <p><strong>Nome: </strong><%= @random_player.full_name %></p>
-    <p><strong>Città: </strong><%= @random_player.city %></p>
-    <p><strong>Professione: </strong><%= @random_player.occupation %></p>
+    <p><%= @random_player.full_name %></p>
     <%= link_to "Tutte le star", {:controller => "/players", :action => "index"}, :class => "more-link" %>
   </div>
   <% end %>
