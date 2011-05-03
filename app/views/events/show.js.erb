@@ -1,1 +1,4 @@
 $("#event").html("<%= escape_javascript(render(@event)) %>");
+  $.colorbox.remove();
+  $.colorbox.init();
+  $("a[rel='gallery']").colorbox({ width: 900, opacity: 0.97, transition:'fade', speed:500, current:"Immagine {current} di {total}"});
