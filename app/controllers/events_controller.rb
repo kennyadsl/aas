@@ -4,6 +4,7 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
     @challenge = Challenge.new
+    @sidebar = false
 
     respond_to do |format|
       format.html # index.html.erb

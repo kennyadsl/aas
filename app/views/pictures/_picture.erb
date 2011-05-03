@@ -1,9 +1,3 @@
-<p>
-	<b>Image</b>
-	<%= image_tag picture.image_url(:slide) if picture.image? %>
-</p>
-<p>
-  <%= link_to 'Destroy Image', [picture.event, picture],
-               :confirm => 'Are you sure?',
-               :method => :delete %>
-</p>
+<li>
+  <%= image_tag picture.paperclip(:thumb) if picture.paperclip? %>
+</li>

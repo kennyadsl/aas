@@ -6,5 +6,7 @@ class ApplicationController < ActionController::Base
   def load_sidebar
     @random_player = Player.random
     @news = News.all(:limit => 3)
+    @sidebar = true
   end
+
 end

@@ -13,10 +13,10 @@
   <div id="wrapper">
     <div id="menu">
       <ul>
-        <li><%= link_to "Home", :controller => "pages", :action => "home" %></li>
-        <li><%= link_to "Chi siamo", :controller => "pages", :action => "about" %></li>
-        <li><%= link_to "Le star", :controller => "players", :action => "index" %></li>
-        <li><%= link_to "Eventi", :controller => "events", :action => "index" %></li>
+        <li><%= link_to "Home", :controller => "/pages", :action => "home" %></li>
+        <li><%= link_to "Chi siamo", :controller => "/pages", :action => "about" %></li>
+        <li><%= link_to "Le star", :controller => "/players", :action => "index" %></li>
+        <li><%= link_to "Eventi", :controller => "/events", :action => "index" %></li>
       </ul>
     </div>
     <div id="header">
@@ -43,13 +43,14 @@
     </div><!--  #header -->
 
     <div id="container">
-      <div id="content">
+      <div id="content" <%= 'class=full' if !@sidebar %>>
         <div class="post">
           <%= yield %>
         </div><!-- .post -->
 	    </div><!-- #content -->
-
-      <%= render "shared/sidebar" %>
+      <% if @sidebar %>
+        <%= render "shared/sidebar" %>
+      <% end %>
     </div>
   </div>
   <%= render "shared/footer" %>

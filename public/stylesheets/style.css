@@ -265,6 +265,9 @@ blockquote {
 	width: 590px;
 	padding: 5px 0 0 0;
 }
+#content.full{
+  width: 960px;
+}
 .post-spacer {
 	display: block;
 	height: 1px;
@@ -681,6 +684,9 @@ blockquote {
 #wp-calendar #next:hover {color: #000; background: #eee;padding: 5px 10px 5px 0;}
 #wp-calendar #prev {text-align: left;}
 
+.clear {
+  clear: both;
+}
 #players-list {
   width: 250px;
   float:left;
@@ -702,7 +708,7 @@ blockquote {
 }
 
 #events-list {
-  width: 250px;
+  width: 260px;
   float:left;
 }
 #events-list li a{
@@ -715,9 +721,21 @@ blockquote {
   margin: 0 0 10px 0;
 }
 #event {
-  width: 300px;
-  height: 600px;
-  float:right;
+  width: 650px;
+  float: right;
   padding-bottom: 30px;
   margin-bottom: 30px;
+}
+
+ul.gallery {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+ul.gallery li {
+  float: left;
+  display: inline;
+  margin-right: 20px;
+  height: 100px;
+  width: 100px;
 }

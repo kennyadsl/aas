@@ -6,7 +6,7 @@
     <p><%= @random_player.full_name %></p>
     <%= image_tag @random_player.paperclip.url(:thumb) %>
     <br>
-    <%= link_to "Vedi tutte le star", :controller => "players", :action => "index" %>
+    <%= link_to "Vedi tutte le star", :controller => "/players", :action => "index" %>
   </div>
   <% end %>
 

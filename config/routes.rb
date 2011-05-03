@@ -12,11 +12,12 @@ Aas::Application.routes.draw do
 
   resources :news
 
+  root :to => "pages#home"
+
   get "pages/home"
 
   get "pages/about"
 
-  root :to => "pages#home"
 
 
   # The priority is based upon order of creation:

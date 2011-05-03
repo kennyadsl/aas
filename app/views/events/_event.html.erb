@@ -1,40 +1,37 @@
-
+<h1 class="post-title"><%= @event.title %></h1>
 <p>
-  <b>Body:</b>
   <%= raw(@event.body) %>
 </p>
 
 <p>
-  <b>Date:</b>
   <%= @event.date %>
 </p>
 
 <p>
-  <b>Location:</b>
+  <b>Dove:</b>
   <%= @event.location %>
 </p>
 
 <p>
-  <b>Opponent:</b>
+  <b>Sfidante:</b>
   <%= @event.opponent %>
 </p>
 
-<p>
-  <b>Is indoor:</b>
-  <%= @event.is_indoor %>
-</p>
+<% if @event.result_home && @event.result_guest %>
+  <p>
+    <b>Result home:</b>
+    <%= @event.result_home %>
+  </p>
+  <p>
+    <b>Result guest:</b>
+    <%= @event.result_guest %>
+  </p>
+<% end %>
 
-<p>
-  <b>Result home:</b>
-  <%= @event.result_home %>
-</p>
 
-<p>
-  <b>Result guest:</b>
-  <%= @event.result_guest %>
-</p>
-
-<h2>Pictures</h2>
-<%= render :partial => "pictures/picture", :collection => @event.pictures %>
+<h2>Foto dell'evento</h2>
+<ul class="gallery">
+  <%= render :partial => "pictures/picture", :collection => @event.pictures %>
+</ul>
 
 
