@@ -1,9 +1,11 @@
 <head>
   <title>Abruzzo All Stars Onlus</title>
   <%= stylesheet_link_tag 'reset', 'style', '/colorthemes/italia', 'nivo-slider' %>
+  <%= yield :stylesheets %>
 
-  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js' %>
-  <%= javascript_include_tag 'rails', 'jquery.nivo.slider' %>
+  <%= javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js', "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %>
+  <%= javascript_include_tag 'rails', 'jquery.nivo.slider', 'uni-form.jquery', 'uni-form-validation.jquery.min', 'localization/it.js' %>
+  <%= yield :javascripts %>
 
   <%= csrf_meta_tag %>
 
@@ -38,6 +40,12 @@
     );
     $('img').load(function() {
       $('#wrapper').css('padding-bottom',$('#footer-container').height()+'px');
+    });
+    $(function(){
+      $('form.uniForm').uniform({
+        prevent_submit : true
+      });
+      $('#challenge_date').datepicker();
     });
   });
   </script>

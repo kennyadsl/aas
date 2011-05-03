@@ -1,37 +1,60 @@
-<%= form_for(@challenge) do |f| %>
-  <% if @challenge.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@challenge.errors.count, "error") %> prohibited this challenge from being saved:</h2>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", 'uni-form', 'default.uni-form' %>
+<% end %>
+<% content_for :javascripts do %>
+  <%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %>
 
-      <ul>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $(function(){
+      $('form.uniForm').uniform();
+      $('#challenge_date').datepicker();
+    });
+  });
+  </script>
+<% end %>
+
+<%= form_for(@challenge, :html =>  {:class => "uniForm"}) do |f| %>
+  <% if @challenge.errors.any? %>
+    <div id="errorMsg">
+      <h3><%= pluralize(@challenge.errors.count, "errore", "errori") %> hanno impedito a questa sfida di essere lanciata:</h3>
+      <ol>
       <% @challenge.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
-      </ul>
+      </ol>
     </div>
   <% end %>
+  <fieldset>
+    <div class="ctrlHolder">
+      <%= f.label :opponent %><br />
+      <%= f.text_field :opponent, :class => "required textInput medium" %>
+      <p class="formHint">Inserisci qui il nome della squadra sfidante.</p>
+    </div>
+    <div class="ctrlHolder">
+      <%= f.label :date %><br />
+      <%= f.text_field :date, :class => "textInput medium" %>
+      <p class="formHint">Inserisci una data indicativa.</p>
+    </div>
+    <div class="ctrlHolder">
+      <%= f.label :email %><br />
+      <%= f.text_field :email, :class => "required textInput medium" %>
+      <p class="formHint">Inserisci un indirizzo al quale possiamo contattarvi.</p>
+    </div>
+    <div class="ctrlHolder">
+      <%= f.label :body %><br />
+      <%= f.text_area :body, :class => "required"  %>
+      <p class="formHint">Inserisci il testo della sfida.</p>
+    </div>
+    <div class="ctrlHolder">
+      <%= f.label :location %><br />
+      <%= f.text_field :location, :class => "required textInput medium"  %>
+      <p class="formHint">Inserisci dove intendi giocare la partita.</p>
+    </div>
+    <div class="buttonHolder">
+      <%= f.submit "Sfidaci", :class => "primaryAction" %>
+    </div>
+  </fieldset>
 
-  <div class="field">
-    <%= f.label :opponent %><br />
-    <%= f.text_field :opponent %>
-  </div>
-  <div class="field">
-    <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sfidaci" %>
-  </div>
 <% end %>
