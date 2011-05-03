@@ -3,6 +3,7 @@ class PlayersController < ApplicationController
   # GET /players.xml
   def index
     @players = Player.all
+    @random_player = ""
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,6 +14,7 @@ class PlayersController < ApplicationController
   # GET /players/1
   # GET /players/1.xml
   def show
+    @random_player = ""
     @player = Player.find(params[:id])
 
     respond_to do |format|

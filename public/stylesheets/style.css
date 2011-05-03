@@ -702,6 +702,7 @@ blockquote {
 }
 #player {
   width: 300px;
+  min-height: 300px;
   float:right;
   padding-bottom: 30px;
   margin-bottom: 30px;

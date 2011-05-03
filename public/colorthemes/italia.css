@@ -39,6 +39,7 @@
 .more-link:hover,#submit:hover, #sidebar #searchsubmit:hover {
 
 	background: #cb3d3d;
+  color: #fff;
 
 }
 
@@ -46,7 +47,6 @@
 
 	font-weight:bold;
 
-	color: #d1081d;
 
 }
 
