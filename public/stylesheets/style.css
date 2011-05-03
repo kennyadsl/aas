@@ -47,7 +47,7 @@ blockquote {
 	background-position: 12px 12px;
 	color: #595959;
 	margin: 5px 0;
-	padding: 8px 15px 38px 60px;
+	padding: 28px 15px 68px 60px;
   font-size: 200%;
 }
 #top_bg {
@@ -169,7 +169,9 @@ blockquote {
 }
 #logo a {
 	color: #fff;
-  margin-left: 330px
+  margin-left: 330px;
+text-shadow: 2px 1px 1px #000000;
+filter: dropshadow(color=#000000, offx=2, offy=1);
 }
 #logo a:hover {
 	text-decoration:none;
@@ -592,7 +594,7 @@ blockquote {
 	width: 100%;
 	height: auto;
 	text-align: center;
-	background: #191919;
+	background:#086bbb;
 	border-top: 1px solid #ddd;
 	position: absolute;
 	bottom: 0px;
@@ -604,14 +606,14 @@ blockquote {
 	width: 990px;
 	height: auto;
 	padding: 35px 0 10px 10px;
-	color: #c0c0c0;
+	color: #fff;
 	display: inline-block;
 }
 #footer-sidebar {
 	height: auto;
 	width: 100%;
 	margin: 0 0 30px 0;
-	color: #888;
+	color: #fff;
 	display: inline-block;
 }
 #footer-sidebar #twitter {
@@ -640,18 +642,31 @@ blockquote {
 	font-size: 90%;
 }
 #footer-sidebar .sidepanel ul li {
-	border-bottom: 1px solid #353535;
+	border-bottom: 0px solid #353535;
 }
 #footer-sidebar .sidepanel ul li ul li {
 	border-bottom: 0px solid #353535;
 	padding: 5px 0 0 10px;
+}
+#footer-sidebar .sidepanel.sponsor {
+  width: 450px;
+}
+#footer-sidebar .sidepanel.sponsor h1 {
+  font-size: 140%;
+  margin-bottom: 10px;
+}
+#footer-sidebar .sidepanel.sponsor ul li{
+  float: left;
+}
+#footer-sidebar a {
+  color: #eee;
 }
 #footer-links {
 	list-style: none;
 	margin: 0 0 0 20px;
 }
 #footer-links a {
-	color: #888;
+	color: #eee;
 	font-size: 90%;
 	text-transform: uppercase;
 }
