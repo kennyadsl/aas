@@ -12,6 +12,7 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
+gem 'aws-s3'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
