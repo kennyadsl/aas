@@ -101,7 +101,7 @@ blockquote.inverted {
 	background: url("../images/slider-shadow.png") 50% 0% no-repeat;
 	height: 96px;
 	width: 100%;
-	top: 590px;
+	top: 560px;
 	left: 0px;
 }
 #fullwrapper {
@@ -165,18 +165,18 @@ blockquote.inverted {
 	float: left;
 }
 #logo {
-	font-size: 400%;
+	font-size: 260%;
 	font-family: League Gothic Regular, Helvetica, Arial, sans-serif;
 	line-height: 0.8em;
 	text-transform: uppercase;
 	vertical-align: bottom;
-  padding: 150px 0 0 0;
+  padding: 160px 20px 20px 0;
 }
 #logo a {
 	color: #fff;
   margin-left: 330px;
-text-shadow: 2px 1px 1px #000000;
-filter: dropshadow(color=#000000, offx=2, offy=1);
+  text-shadow: 2px 1px 1px #000000;
+  filter: dropshadow(color=#000000, offx=2, offy=1);
 }
 #logo a:hover {
 	text-decoration:none;
