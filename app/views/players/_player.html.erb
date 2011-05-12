@@ -2,28 +2,29 @@
 <p>
   <%= image_tag @player.paperclip.url(:medium) if @player.paperclip? %>
 </p>
+  <h1><%= @player.full_name %></h1>
+
 <p>
-  <b>Full name:</b>
-  <%= @player.full_name %>
+  <b>Perchè sono qui:</b><br>
+  <%= @player.who_i_am %>
 </p>
 
 <p>
-  <b>Occupation:</b>
+  <b>Professione:</b><br>
   <%= @player.occupation %>
 </p>
 
 <p>
-  <b>City:</b>
-  <%= @player.city %>
+  <b>Chi sono:</b><br>
+  <%= @player.bio %>
 </p>
 
 <p>
-  <b>Role:</b>
+  <b>Ruolo:</b><br>
   <%= @player.role %>
 </p>
 
 <p>
-  <b>Bio:</b>
-  <%= @player.bio %>
+  <b>Sito personale:</b><br>
+  <%= link_to "Vai al sito personale", @player.website, :target => "_blank" %>
 </p>
-

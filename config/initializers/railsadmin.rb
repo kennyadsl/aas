@@ -3,6 +3,15 @@ RailsAdmin.config do |config|
     object_label do
       "#{bindings[:object].full_name}"
     end
+    edit do
+      field :full_name
+      field :role
+      field :occupation
+      field :bio
+      field :who_i_am
+      field :website
+      field :paperclip
+    end
   end
 
   config.model Challenge do

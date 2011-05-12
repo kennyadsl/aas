@@ -1,9 +1,14 @@
 class Player < ActiveRecord::Base
   
-  attr_accessible :full_name, :role, :occupation, :city, :bio
+  attr_accessible :full_name, :role, :occupation, :city, :bio, :who_i_am, :website
+
+  website_regex = /\A(^\z|http:\/\/+.+)\z/i #empty or valid link
+
+  validates :link, :format => { :with => website_regex }
+
+  before_validation :add_http
 
   if Rails.env.production?
-
     has_attached_file :paperclip,
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
                     :storage => :s3,
@@ -17,9 +22,17 @@ class Player < ActiveRecord::Base
                     :styles => { :medium => "300x300>", :thumb => "100x100>" }
   end
 
-
   def self.random
     Player.offset(rand(Player.count)).first
   end
 
+  private
+
+  def add_http
+    if self.website && !self.website.blank? & !self.website.match(/^http:\/\//)
+      self.website = "http://"+self.website
+    end
+  end
+
 end
+

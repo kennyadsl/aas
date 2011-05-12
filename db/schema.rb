@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110428155416) do
+ActiveRecord::Schema.define(:version => 20110512135739) do
 
   create_table "challenges", :force => true do |t|
     t.string   "opponent"
@@ -66,6 +66,9 @@ ActiveRecord::Schema.define(:version => 20110428155416) do
     t.string   "paperclip_content_type"
     t.integer  "paperclip_file_size"
     t.datetime "paperclip_updated_at"
+    t.text     "who_i_am"
+    t.string   "link"
+    t.string   "website"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

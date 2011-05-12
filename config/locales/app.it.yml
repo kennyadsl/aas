@@ -37,8 +37,10 @@ it:
                 occupation: "Professione"
                 city: "Città"
                 role: "Ruolo"
-                bio: "Curriculum"
+                bio: "Perchè sono qui"
                 paperclip: "Immagine"
+                who_i_am: "Chi sono"
+                website: "Sito personale"
                 created_at: "Creato il"
                 updated_at: "Modificato il"
             challenge:
