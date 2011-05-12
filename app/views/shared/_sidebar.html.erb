@@ -2,7 +2,7 @@
   <% if !@random_player.blank? %>
     <div class="sidepanel">
 
-    <h3>Una star a caso</h3>
+    <h3>Le nostre star</h3>
     <br>
     <%= image_tag @random_player.paperclip.url(:medium) %>
     <p><%= @random_player.full_name %></p>
