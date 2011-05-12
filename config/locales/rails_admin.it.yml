@@ -55,6 +55,6 @@ it:
       create: "crea"
       created: "creato"
       update: "aggiorna"
-      updated: "aggirnato"
+      updated: "aggiornato"
       delete: "elimina"
       deleted: "eliminato"

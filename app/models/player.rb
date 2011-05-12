@@ -4,7 +4,7 @@ class Player < ActiveRecord::Base
 
   website_regex = /\A(^\z|http:\/\/+.+)\z/i #empty or valid link
 
-  validates :link, :format => { :with => website_regex }
+  validates :website, :format => { :with => website_regex }
 
   before_validation :add_http
 
