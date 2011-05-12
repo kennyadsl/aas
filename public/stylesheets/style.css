@@ -173,11 +173,11 @@ blockquote.inverted {
 	line-height: 0.8em;
 	text-transform: uppercase;
 	vertical-align: bottom;
-  padding: 160px 40px 40px 0;
+  padding: 160px 20px 20px 0;
 }
 #logo a {
 	color: #fff;
-  margin-left: 250px;
+  margin-left: 210px;
   text-shadow: 2px 1px 1px #000000;
   filter: dropshadow(color=#000000, offx=2, offy=1);
 }
@@ -303,11 +303,19 @@ blockquote.inverted {
 	margin: 6px 0 0 0;
 }
 .post-title {
-    text-transform: uppercase;
+  text-transform: uppercase;
 	font-size: 300%;
 	line-height: 1.2;
 	font-weight: normal;
 	font-family: 'League Gothic Regular', Helvetica, Arial, sans-serif;
+}
+.post-title.big {
+  text-align: right;
+  font-size: 500%
+}
+.post-title.medium {
+  text-align: right;
+  font-size: 200%
 }
 .post-title a {
 	color: #9b0800;
