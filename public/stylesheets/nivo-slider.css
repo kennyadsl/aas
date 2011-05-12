@@ -76,13 +76,13 @@
 }
 .nivo-prevNav {
 	left:10px;
-	background: url('images/nav_left.png') no-repeat;
+	background: url('../images/nav_left.png') no-repeat;
 	height: 31px;
 	width: 31px;
 }
 .nivo-nextNav {
 	left:919px;
-	background: url('images/nav_right.png') no-repeat;
+	background: url('../images/nav_right.png') no-repeat;
 	height: 31px;
 	width: 31px;
 }
