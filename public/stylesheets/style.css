@@ -47,8 +47,13 @@ blockquote {
 	background-position: 12px 12px;
 	color: #595959;
 	margin: 5px 0;
-	padding: 28px 15px 68px 60px;
+	padding: 28px 15px 0px 60px;
   font-size: 200%;
+}
+blockquote.inverted {
+  padding-bottom: 68px;
+  background: url(../images/quotes_i.gif) no-repeat top right;
+  margin-top:-20px;
 }
 #top_bg {
 	height: 57px;
