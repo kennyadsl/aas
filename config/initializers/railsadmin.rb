@@ -10,6 +10,7 @@ RailsAdmin.config do |config|
       field :bio
       field :who_i_am
       field :website
+      field :is_mister
       field :paperclip
     end
   end

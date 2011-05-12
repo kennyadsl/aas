@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110512135739) do
+ActiveRecord::Schema.define(:version => 20110512153941) do
 
   create_table "challenges", :force => true do |t|
     t.string   "opponent"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20110512135739) do
     t.text     "who_i_am"
     t.string   "link"
     t.string   "website"
+    t.boolean  "is_mister"
   end
 
   create_table "rails_admin_histories", :force => true do |t|

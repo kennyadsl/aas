@@ -1,6 +1,6 @@
 class Player < ActiveRecord::Base
   
-  attr_accessible :full_name, :role, :occupation, :city, :bio, :who_i_am, :website
+  attr_accessible :full_name, :role, :occupation, :city, :bio, :who_i_am, :website, :is_mister
 
   website_regex = /\A(^\z|http:\/\/+.+)\z/i #empty or valid link
 

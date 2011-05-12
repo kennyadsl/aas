@@ -2,7 +2,8 @@ class PlayersController < ApplicationController
   # GET /players
   # GET /players.xml
   def index
-    @players = Player.all
+    @players = Player.all :conditions => ["is_mister != 1"]
+    @mister = Player.find_by_is_mister(true)
     @random_player = ""
 
     respond_to do |format|

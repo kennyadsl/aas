@@ -41,6 +41,7 @@ it:
                 paperclip: "Immagine"
                 who_i_am: "Chi sono"
                 website: "Sito personale"
+                is_mister: "Mister"
                 created_at: "Creato il"
                 updated_at: "Modificato il"
             challenge:
