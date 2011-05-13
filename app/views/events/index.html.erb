@@ -6,14 +6,27 @@
 <% end %>
 
 
-<h1 class="post-title">Ultimi eventi </h1>
 <div class="post-content">
 
+  <% if !@future_events.empty? %>
+    <h1 class="post-title big center">Le prossime sfide</h1>
+    <ul id="future-events-list" >
+      <% @future_events.each do |event| %>
+        <%= render :partial => "/events/event", :locals => { :event => event } %>
+      <% end %>
+    </ul>
+  <% else %>
+    <h1 class="post-title">Non ci sono eventi futuri in programma</h1>
+  <% end %>
+
+  <% if !@past_events.empty? %>
+  <h1 class="post-title big center">Le sfide passate</h1>
   <ul id="events-list" >
-    <% @events.each do |event| %>
+    <% @past_events.each do |event| %>
       <li><%= link_to event.title, event, :remote => true %></li>
     <% end %>
   </ul>
+  <% end %>
 
 
   <div id="event">
@@ -22,6 +35,6 @@
 
 </div>
 <div class="clear"></div>
-<h1 class="post-title">Sfida le nostre star</h1>
+<h1 class="post-title big center">Sfida le nostre star</h1>
 <%= render :partial => "challenges/form" %>
 

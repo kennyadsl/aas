@@ -313,6 +313,9 @@ blockquote.inverted {
   text-align: right;
   font-size: 500%
 }
+.post-title.big.center {
+  text-align: center;
+}
 .post-title.medium {
   text-align: right;
   font-size: 200%

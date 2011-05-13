@@ -2,7 +2,10 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
+
+    @future_events = Event.future
+    @past_events = Event.past
+
     @challenge = Challenge.new
     @sidebar = false
 

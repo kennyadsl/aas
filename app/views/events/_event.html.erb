@@ -1,3 +1,4 @@
+<% @event = event if event %>
 <h1 class="post-title"><%= @event.title %></h1>
 <p>
   <%= raw(@event.body) %>
@@ -6,16 +7,19 @@
 <p>
   <%= @event.date %>
 </p>
+<% if !@event.opponent.blank? %>
+  <p>
+    <b>Dove:</b>
+    <%= @event.location %>
+  </p>
+<% end %>
 
-<p>
-  <b>Dove:</b>
-  <%= @event.location %>
-</p>
-
-<p>
-  <b>Sfidante:</b>
-  <%= @event.opponent %>
-</p>
+<% if !@event.opponent.blank? %>
+  <p>
+    <b>Sfidante:</b>
+    <%= @event.opponent %>
+  </p>
+<% end %>
 
 <% if @event.result_home && @event.result_guest %>
   <p>
@@ -27,11 +31,11 @@
     <%= @event.result_guest %>
   </p>
 <% end %>
-
-
-<h2>Foto dell'evento</h2>
-<ul class="gallery">
-  <%= render :partial => "pictures/picture", :collection => @event.pictures %>
-</ul>
+<% if !@event.pictures.empty? %>
+  <h2>Foto dell'evento</h2>
+  <ul class="gallery">
+    <%= render :partial => "pictures/picture", :collection => @event.pictures %>
+  </ul>
+<% end %>
 
 
