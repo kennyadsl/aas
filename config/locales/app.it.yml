@@ -53,7 +53,7 @@ it:
                 created_at: "Creato il"
                 updated_at: "Modificato il"
             news:
-                body: "Tetso"
+                body: "Testo"
                 link: "Link"
                 created_at: "Creato il"
                 updated_at: "Modificato il"
