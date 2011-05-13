@@ -103,7 +103,7 @@ blockquote.inverted {
 	background: url("../images/slider-shadow.png") 50% 0% no-repeat;
 	height: 96px;
 	width: 100%;
-	top: 610px;
+	top: 650px;
 	left: 0px;
 }
 #fullwrapper {
@@ -137,7 +137,7 @@ blockquote.inverted {
 }
 #subheader {
 	width: 100%;
-	margin: 10px 0 0 0;
+	margin: 10px 0 40px 0;
   padding: 20px 0 0 0;
 	height: 230px;
 	display: inline-block;

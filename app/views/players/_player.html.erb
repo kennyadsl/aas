@@ -23,8 +23,9 @@
   <b>Ruolo:</b><br>
   <%= @player.role %>
 </p>
-
-<p>
-  <b>Sito personale:</b><br>
-  <%= link_to "Vai al sito personale", @player.website, :target => "_blank" %>
-</p>
+<% if !@player.website.blank? %>
+  <p>
+    <b>Sito personale:</b><br>
+    <%= link_to "Vai al sito personale", @player.website, :target => "_blank" %>
+  </p>
+<% end %>
