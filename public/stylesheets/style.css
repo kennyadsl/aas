@@ -318,7 +318,8 @@ blockquote.inverted {
 }
 .post-title.medium {
   text-align: right;
-  font-size: 200%
+  font-size: 200%;
+  border: none;
 }
 .post-title a {
 	color: #9b0800;
@@ -739,9 +740,9 @@ blockquote.inverted {
   margin: 0 0 10px 0;
 }
 #player {
-  width: 300px;
+  width: 600px;
   min-height: 300px;
-  float:right;
+  float:left;
   padding-bottom: 30px;
   margin-bottom: 30px;
 }

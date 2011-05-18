@@ -5,6 +5,7 @@ class PlayersController < ApplicationController
     @players = Player.all :conditions => ["is_mister != ?", TRUE]
     @mister = Player.find_by_is_mister(true)
     @random_player = ""
+    @sidebar = false
 
     respond_to do |format|
       format.html # index.html.erb
