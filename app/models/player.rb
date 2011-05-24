@@ -6,7 +6,7 @@ class Player < ActiveRecord::Base
 
   validates :website, :format => { :with => website_regex }
 
-  default_scope :order => 'full_name DESC'
+  default_scope :order => 'full_name ASC'
 
   before_validation :add_http
 
