@@ -739,6 +739,9 @@ blockquote.inverted {
 	vertical-align: bottom;
   margin: 0 0 10px 0;
 }
+#players-list h1.post-title {
+  margin-top:40px;
+}
 #player {
   width: 600px;
   min-height: 300px;
