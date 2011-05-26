@@ -1,130 +1,70 @@
+# Necessary to run on Site5
+set :use_sudo, false
+set :group_writable, false
+ 
+# Less releases, less space wasted
+set :keep_releases, 2
+ 
+# The mandatory stuff
 set :application, "abruzzoallstars"
-set :repository,  "git://github.com/kennyadsl/aas.git"
-set :domain, "abruzzoallstars.it"
-
-# user is the login name for the shared hosting account
-# it should also be the name of your home directory i.e. /home/my-user-name
 set :user, "abruzzoa"
-
-# this will place you app outside your /public_html
-# and protect your app file from exposure
-set :deploy_to, "/home/#{user}/#{application}"
+ 
+set :repository, "git://github.com/kennyadsl/aas.git"
 
 set :scm, :git
 # set :deploy_via, :remote_cache  # if your server has direct access to the repository
 set :deploy_via, :copy  # if you server does NOT have direct access to the repository (default)
 set :git_shallow_clone, 1  # only copy the most recent, not the entire repository (default:1)
-
 ssh_options[:paranoid] = false
 set :use_sudo, false
-
 set :keep_releases, 2  # only keep a current and one previous version to save space
 
-role :app, domain
-role :web, domain
-role :db,  domain, :primary => true
-
-task :update_public, :roles => [:app] do
-  run "chmod 755 #{release_path}/public"
-  #run "chmod 755 #{release_path}/public/dispatch.*"
-end
-# remove the .git directory and .gitignore from the current release
-task :remove_git_directories, :roles => [:app] do
-  run "rm -rfd #{release_path}/.git"
-  run "rm #{release_path}/.gitignore"
-end
-# this lets us keep the system_stopped files in project
-task :copy_system_stopped_files, :roles => [:app] do
-  run "cp -f #{release_path}/public/system_stopped/* #{shared_path}/system_stopped/"
-end
-
-after "deploy:update_code", :update_public
-after "deploy:update_code", :copy_system_stopped_files
-after "deploy:update_code", :remove_git_directories
-
-# create a symlink from the current/public to ~/public_html
-task :create_public_html, :roles => [:app] do
-  run "ln -fs #{current_path}/public ~/public_html"
-end
-after "deploy:cold", :create_public_html
-
-# create a directory in shared to hold files that will be servered
-# when the system is stopped, and a config directory
-task :create_shared_directories, :roles => [:app] do
-  run "mkdir -p #{shared_path}/system_stopped"
-  run "mkdir -p #{shared_path}/config"
-end
-after "deploy:setup", :create_shared_directories
-
-# remove the symlink for ~/public_html
-task :remove_public_html, :roles => [:app] do
-  run "rm ~/public_html"
-end
-
-# creates a symlink to ~/public_html to the shared/system_stopped directory
-# places files you want served in this dir for when the system is stopped
-task :create_public_html_to_stopped, :roles => [:app] do
-  run "ln -fs #{shared_path}/system_stopped ~/public_html"
-end
-
-# we need to override the default start/stop/restart functions
+# This is related to site5 too.
+set :deploy_to, "/home/#{user}/apps/#{application}"
+ 
+role :app, "abruzzoallstars.it"
+role :web, "abruzzoallstars.it"
+role :db,  "abruzzoallstars.it", :primary => true
+ 
+ 
+# In the deploy namespace we override some default tasks and we define
+# the site5 namespace.
 namespace :deploy do
-  desc "Restart the web server. Killing all FCGI processes."
-  task :restart, :roles => :app do
-    # for most hosts, all you need to do is stop all FCGI processing running
-    #run "killall -q dispatch.fcgi"
-
-    # but some hosts can restart by touching the dispatch file
-    #run "chmod 755 #{current_path}/public/dispatch.fcgi"
-    #run "touch #{current_path}/public/dispatch.fcgi"
+  desc <<-DESC
+    Deploys and starts a `cold' application. This is useful if you have not \
+    deployed your application before, or if your application is (for some \
+    other reason) not currently running. It will deploy the code, run any \
+    pending migrations, and then instead of invoking `deploy:restart', it will \
+    invoke `deploy:start' to fire up the application servers.
+  DESC
+  # NOTE: we kill public_html so be sure to have a backup or be ok with this application
+  # being the default app for the domain.
+  task :cold do
+    update
+    site5::link_public_html
+    site5::kill_dispatch_fcgi
   end
-  after "deploy:update", "deploy:site5:fix_permissions", "deploy:site5:kill_dispatch_fcgi"
-
-  desc "Start the web server. Really nothing to do for shared hosting."
-  task :start, :roles => :app do
-    remove_public_html
-    create_public_html
-    deploy.restart
-  end
-
-  desc "Stop the web server and present maintenance page."
-  task :stop, :roles => :app do
-    remove_public_html
-    create_public_html_to_stopped
-  end
-
-  namespace :web do
-    desc "Make application web accessible again."
-    task :enable, :roles => [:app] do
-      deploy.start
-    end
-
-    desc "Present system maintenance page to users."
-    task :disable, :roles => [:app] do
-      deploy.stop
-    end
-  end
-
+ 
   desc <<-DESC
     Site5 version of restart task.
   DESC
   task :restart do
     site5::kill_dispatch_fcgi
   end
-
+ 
   namespace :site5 do
-
+    desc <<-DESC
+      Links public_html to current_release/public
+    DESC
+    task :link_public_html do
+      run "cd /home/#{user}; rm -rf public_html; ln -s #{current_path}/public ./public_html"
+    end
+ 
     desc <<-DESC
       Kills Ruby instances on Site5
     DESC
     task :kill_dispatch_fcgi do
-      run "pkill -9 -u #{user} -f dispatch.fcgi"
-    end
-
-    desc "Fix g-w issues with Site5"
-    task :fix_permissions do
-      run "cd #{current_path}; chmod -R g-w *"
+      run "skill -u #{user} -c ruby"
     end
   end
-
 end
