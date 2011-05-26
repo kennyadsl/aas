@@ -76,5 +76,5 @@ namespace :deploy do
     end
   end
 
-  after "deploy:finalize_update", "deploy:db:replace_conf"
+  after "deploy:symlink", "deploy:db:replace_conf"
 end
