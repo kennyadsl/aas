@@ -72,11 +72,13 @@ namespace :deploy do
   desc "Restart the web server. Killing all FCGI processes."
   task :restart, :roles => :app do
     # for most hosts, all you need to do is stop all FCGI processing running
-    run "killall -q dispatch.fcgi"
+    #run "killall -q dispatch.fcgi"
+
     # but some hosts can restart by touching the dispatch file
     #run "chmod 755 #{current_path}/public/dispatch.fcgi"
     #run "touch #{current_path}/public/dispatch.fcgi"
   end
+  after "deploy:update", "deploy:site5:fix_permissions", "deploy:site5:kill_dispatch_fcgi"
 
   desc "Start the web server. Really nothing to do for shared hosting."
   task :start, :roles => :app do
@@ -101,6 +103,28 @@ namespace :deploy do
     task :disable, :roles => [:app] do
       deploy.stop
     end
-
   end
+
+  desc <<-DESC
+    Site5 version of restart task.
+  DESC
+  task :restart do
+    site5::kill_dispatch_fcgi
+  end
+
+  namespace :site5 do
+
+    desc <<-DESC
+      Kills Ruby instances on Site5
+    DESC
+    task :kill_dispatch_fcgi do
+      run "pkill -9 -u #{user} -f dispatch.fcgi"
+    end
+
+    desc "Fix g-w issues with Site5"
+    task :fix_permissions do
+      run "cd #{current_path}; chmod -R g-w *"
+    end
+  end
+
 end
