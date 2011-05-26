@@ -11,16 +11,21 @@ gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'capistrano'
+  gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 end
 
 group :test do
   gem 'rspec', '2.5.0'
   gem 'webrat', '0.7.1'
+  gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
+end
+
+group :production do
+  gem 'mysql2'
 end
 
 # Use unicorn as the web server
