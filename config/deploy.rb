@@ -1,3 +1,5 @@
+require 'bundler/capistrano'
+
 # Necessary to run on Site5
 set :use_sudo, false
 set :group_writable, false
@@ -41,7 +43,6 @@ namespace :deploy do
   # being the default app for the domain.
   task :cold do
     update
-    db::replace_conf
     site5::link_public_html
     site5::kill_dispatch_fcgi
   end
@@ -55,7 +56,7 @@ namespace :deploy do
 
   namespace :db do
     task :replace_conf do
-      run "ln -s /home/#{user}/apps/#{application}/db/database.yml #{current_path}/config/database.yml"
+      run "ln -nfs /home/#{user}/apps/#{application}/db/database.yml #{current_path}/config/database.yml"
     end
   end
 
@@ -74,4 +75,6 @@ namespace :deploy do
       run "skill -u #{user} -c ruby"
     end
   end
+
+  after "deploy:finalize_update", "db:symlink"
 end
