@@ -41,6 +41,7 @@ namespace :deploy do
   # being the default app for the domain.
   task :cold do
     update
+    db::replace_conf
     site5::link_public_html
     site5::kill_dispatch_fcgi
   end
@@ -51,7 +52,13 @@ namespace :deploy do
   task :restart do
     site5::kill_dispatch_fcgi
   end
- 
+
+  namespace :db do
+    task :replace_conf do
+      run "ln -s /home/#{user}/apps/#{application}/db/database.yml #{current_path}/config/database.yml"
+    end
+  end
+
   namespace :site5 do
     desc <<-DESC
       Links public_html to current_release/public
