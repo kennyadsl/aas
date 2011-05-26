@@ -26,7 +26,7 @@ role :db,  domain, :primary => true
 
 task :update_public, :roles => [:app] do
   run "chmod 755 #{release_path}/public"
-  run "chmod 755 #{release_path}/public/dispatch.*"
+  #run "chmod 755 #{release_path}/public/dispatch.*"
 end
 # remove the .git directory and .gitignore from the current release
 task :remove_git_directories, :roles => [:app] do
