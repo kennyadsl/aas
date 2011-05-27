@@ -4,7 +4,11 @@
 
     <h3>Le nostre star</h3>
     <br>
-    <%= image_tag @random_player.paperclip.url(:medium) %>
+    <% if !@random_player.paperclip? %>
+      <%= image_tag "profile_m.gif" %>
+    <% else %>
+      <%= image_tag @random_player.paperclip.url(:medium) %>
+    <% end %>
     <p><%= @random_player.full_name %></p>
     <%= link_to "Vedi tutte le star", {:controller => "/players", :action => "index"}, :class => "more-link" %>
   </div>
