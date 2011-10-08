@@ -7,11 +7,10 @@
         <script>
           new TWTR.Widget({
             version: 2,
-            type: 'search',
-            search: '#onlus',
-            interval: 20000,
-            title: 'Onlus News',
-            subject: '',
+            type: 'profile',
+            interval: 6000,
+            rpp: 5,
+            title: '@AbruzzoAllStars',
             width: 225,
             height: 200,
             theme: {
@@ -26,15 +25,15 @@
               }
             },
             features: {
-              scrollbar: false,
-              loop: true,
+              scrollbar: true,
+              loop: false,
               live: true,
               hashtags: true,
               timestamp: true,
-              avatars: true,
-              behavior: 'default'
+              avatars: false,
+              behavior: 'all'
             }
-          }).render().start();
+          }).render().setUser('ABRUZZOALLSTARS').start();
         </script>
       </div>
       <div class="sidepanel">
