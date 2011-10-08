@@ -26,6 +26,12 @@ RailsAdmin.config do |config|
       visible false
     end
 
+    config.model News do
+      edit do
+        field :body
+      end
+    end
+
     config.model Event do
       edit do
         field :title
