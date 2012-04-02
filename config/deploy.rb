@@ -45,6 +45,7 @@ namespace :deploy do
     update
     site5::link_public_html
     site5::kill_dispatch_fcgi
+    run "touch #{ current_path }/tmp/restart.txt"
   end
  
   desc <<-DESC
